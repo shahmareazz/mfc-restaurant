@@ -1,34 +1,55 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
+import './LoginPage.css'; // Import the CSS file for styling
 
-export const Login = () => {
-    return (
-        <Container>
-            <br></br>
-            <h3 >Login</h3>
-            <div className='row'>
-                <div className='col-lg-6'>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter name" />
-                        </Form.Group>
+const LoginPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <Form.Label>Address</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                            <Form.Label>Mobile Number</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Mobile number" />
-                        </Form.Group>
-                    </Form>
-                    <Button variant="primary">Save</Button>
-                </div>
-            </div>
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
-        </Container>
-    );
-}
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle login logic here
+    console.log('Email:', email);
+    console.log('Password:', password);
+  };
+
+  return (
+    <div className="login-page">
+      <div className="login-form-container">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
+          </div>
+          <button type="submit" className="submit-button">Login</button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default LoginPage;
