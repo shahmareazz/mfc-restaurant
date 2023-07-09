@@ -4,22 +4,35 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 function Header() {
     return (
-        <>
-         <Navbar expand="lg" className="bg-body-tertiary" bg="primary"  data-bs-theme="dark">
-            <Container>
-                <Navbar.Brand href="/">MFC</Navbar.Brand>
-                <Nav className="me-auto"></Nav>
-                    <Nav.Link as={Link} to="/Menu">Menu</Nav.Link>
-                    <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end">
-                        <Navbar.Text>
-                            <Nav.Link as={Link} to="/Login"> Login/Registration</Nav.Link>
-                        </Navbar.Text>
-                    </Navbar.Collapse>
-            
-            </Container>
-       </Navbar></>
+       <> 
+<Navbar className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={"mfc-logo.png"}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            MFC
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="/">MFC</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/Menu">Menu</Nav.Link>
+            <Nav.Link as={Link} to="/About">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/Login">Login</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+       </>
     )
 }
-
 export default Header;
