@@ -1,10 +1,10 @@
 import "./App.css"
-import logo from "";
-import { Login } from "./components/Login";
+import LoginForm from "./components/Login";
 import Header from "./components/Header";
-import { BrowserRouter, Route, Routes, Switch} from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import Menu from "./components/Menu";
 import About from "./components/About";
+import Home from "./components/Home"
 function App() {
   
   return (
@@ -12,9 +12,10 @@ function App() {
      <Header />
      <Routes>
      
-      <Route path="/Login" element={<Login />}></Route>
+      <Route path="/Login" element={<LoginForm />}></Route>
       <Route path="/Menu" element={<Menu/>}></Route>
       <Route path="/About" element={<About/>}></Route>
+      <Route path="/home" element={<Home/>}></Route>
      </Routes>
    
     </>

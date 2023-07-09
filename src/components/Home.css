@@ -1,0 +1,17 @@
+.image{
+    margin: 20px;
+    height: 600px;
+    width: 1200px;
+    border-radius: 10px;
+}
+.carousel{
+    margin: 20px;
+}
+.carousel-button{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #282d28;
+    color: #fff;
+    cursor: pointer;
+}
